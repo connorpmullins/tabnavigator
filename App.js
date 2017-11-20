@@ -1,32 +1,91 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import Header from './components/header';
+import Newsfeed from './scenes/newsfeed';
+import Whispers from './scenes/whispers';
 
 const screenStyle = { flex: 1, alignItems: 'center', justifyContent: 'center' };
 
-const HomeScreen = () => (
-  <View style={screenStyle}>
-    <Text>Home Screen</Text>
+const Feed = () => (
+  <View>
+    <Newsfeed />
   </View>
 );
 
-const ProfileScreen = () => (
+const WhisperScreen = () => (
+  <View>
+    <Whispers />
+  </View>
+);
+
+const Questions = () => (
+  <View>
+    <Newsfeed />
+  </View>
+);
+
+const Notifications = () => (
   <View style={screenStyle}>
     <Text>Profile Screen</Text>
   </View>
 );
 
+const Profile = () => (
+  <View style={screenStyle}>
+    <Text>Profile Screen</Text>
+  </View>
+);
 
 const RootTabs = TabNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: Feed,
     navigationOptions: {
-      tabBarLabel: 'Home',
+      tabBarLabel: 'Newsfeed',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-home' : 'ios-home-outline'}
+        <MaterialCommunityIcons
+          name={focused ? 'format-float-right' : 'format-float-right'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Whispers: {
+    screen: WhisperScreen,
+    navigationOptions: {
+      tabBarLabel: 'Whispers',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <MaterialCommunityIcons
+          name={focused ? 'message-text-outline' : 'message-text-outline'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Questions: {
+    screen: Questions,
+    navigationOptions: {
+      tabBarLabel: 'Questions',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <MaterialCommunityIcons
+          name={focused ? 'help' : 'help'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Notifications: {
+    screen: Notifications,
+    navigationOptions: {
+      tabBarLabel: 'Notifications',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <MaterialCommunityIcons
+          name={focused ? 'bell-outline' : 'bell-outline'}
           size={26}
           style={{ color: tintColor }}
         />
@@ -34,12 +93,12 @@ const RootTabs = TabNavigator({
     },
   },
   Profile: {
-    screen: ProfileScreen,
+    screen: Profile,
     navigationOptions: {
       tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-person' : 'ios-person-outline'}
+        <MaterialCommunityIcons
+          name={focused ? 'home' : 'home'}
           size={26}
           style={{ color: tintColor }}
         />
