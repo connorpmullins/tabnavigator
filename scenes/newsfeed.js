@@ -7,7 +7,7 @@ import Header from '../components/header';
 const Newsfeed = () => {
   return (
     <View>
-      <Header headerText="Albums" />
+      <Header headerText="Newsfeed " />
       <AlbumList />
     </View>
   );

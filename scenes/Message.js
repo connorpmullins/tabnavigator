@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
+// import { StackNavigator } from 'react-navigation';
 
 import MessageList from '../components/MessageList';
-import WhisperHeader from '../components/whisperHeader';
+import WhisperHeader from '../components/WhisperHeader';
 
-const Whispers = () => {
+const Message = () => {
   return (
     <View>
       <WhisperHeader />
@@ -13,4 +14,4 @@ const Whispers = () => {
   );
 };
 
-export default Whispers;
+export default Message;

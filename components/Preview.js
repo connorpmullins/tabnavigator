@@ -1,0 +1,32 @@
+import React from 'react';
+import { View } from 'react-native';
+// This is a standalone component that adds styling to the app
+
+/* We need to tell Card how to deal with children that are passed into it from AlbumDetail */
+
+const styles = {
+  containerStyle: {
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+  },
+};
+
+const Preview = (props) => {
+  return (
+    <View style={styles.containerStyle}>
+      {props.children}
+    </View>
+  );
+};
+
+export default Preview;

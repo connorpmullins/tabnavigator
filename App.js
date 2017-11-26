@@ -23,7 +23,7 @@ const WhisperScreen = () => (
 
 const Questions = () => (
   <View>
-    <Newsfeed />
+    <Text>Questions Screen<Text/>
   </View>
 );
 
